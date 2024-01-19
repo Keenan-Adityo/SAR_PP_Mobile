@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sar_pp_mobile/presentation/widgets/mixed_chart.dart';
 import 'package:sar_pp_mobile/presentation/widgets/monthly_card.dart';
 import 'package:sar_pp_mobile/styles/text_styles.dart';
 
@@ -77,9 +78,15 @@ class UP3Page extends StatelessWidget {
                 style: kHeading2,
               ),
             ),
-            
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+              child: Text(
+                "Laporan Penjualan Tenaga Listrik",
+                style: kHeading2,
+              ),
+            ),
+            MixedChart()
           ],
-
         ),
       ),
     );
