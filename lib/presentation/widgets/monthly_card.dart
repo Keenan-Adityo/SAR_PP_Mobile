@@ -19,9 +19,9 @@ class MonthlyCard extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.5),
-              offset: Offset(0, 3),
-              spreadRadius: 5,
-              blurRadius: 7,
+              offset: Offset(1, 3),
+              spreadRadius: 2,
+              blurRadius: 2,
             ),
           ],
           borderRadius: BorderRadius.circular(12)),
@@ -59,7 +59,7 @@ class MonthlyCard extends StatelessWidget {
                 children: [
                   Text(
                     "97%",
-                    style: kText,
+                    style: kText.copyWith(color: Colors.red),
                   ),
                   SizedBox(
                     width: 4,

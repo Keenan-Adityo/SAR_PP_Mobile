@@ -10,3 +10,5 @@ final TextStyle kHeading3 =
     GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600);
 final TextStyle kText =
     GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w500);
+final TextStyle kSubText =
+    GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w400);

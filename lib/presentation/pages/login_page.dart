@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sar_pp_mobile/presentation/pages/up3_page.dart';
+import 'package:sar_pp_mobile/styles/text_styles.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -11,11 +12,17 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SvgPicture.asset("assets/pln-logo.svg"),
-            Text("SAR PP Mobile"),
-            Text("Massukan Password"),
+            Text(
+              "SAR PP Mobile",
+              style: kHeading1,
+            ),
+            Text(
+              "Massukan Password",
+              style: kHeading2,
+            ),
             TextField(),
             ElevatedButton(
               child: Text("Masuk"),
