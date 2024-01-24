@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sar_pp_mobile/presentation/blocs/up3_bloc/up3_bloc.dart';
-import 'package:sar_pp_mobile/styles/text_styles.dart';
+import 'package:sar_pp_mobile/presentation/blocs/dashboard_bloc/dashboard_bloc.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class MixedChart extends StatefulWidget {
-  const MixedChart({Key? key}) : super(key: key);
+  const MixedChart({super.key});
 
   @override
   State<MixedChart> createState() => _MixedChartState();
@@ -14,7 +13,7 @@ class MixedChart extends StatefulWidget {
 class _MixedChartState extends State<MixedChart> {
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<Up3Bloc, Up3State, Up3State>(
+    return BlocSelector<DashboardBloc, DashboardState, DashboardState>(
       selector: (state) {
         return state;
       },

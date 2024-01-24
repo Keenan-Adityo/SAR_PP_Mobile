@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sar_pp_mobile/presentation/blocs/dashboard_bloc/dashboard_bloc.dart';
 import 'package:sar_pp_mobile/presentation/widgets/custom_drawer.dart';
 import 'package:sar_pp_mobile/presentation/widgets/description_card.dart';
 import 'package:sar_pp_mobile/presentation/widgets/monthly_card.dart';
 import 'package:sar_pp_mobile/presentation/widgets/persistent_sliver_delegate.dart';
 import 'package:sar_pp_mobile/styles/text_styles.dart';
+import 'package:sar_pp_mobile/utils/office.dart';
 
 class UP3Page extends StatelessWidget {
   const UP3Page({super.key});
@@ -12,11 +15,26 @@ class UP3Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "UP3 Purwokerto",
-          style: kHeading1,
+          title: DropdownMenu<Office>(
+        initialSelection: Office.up3,
+        requestFocusOnTap: true,
+        inputDecorationTheme: InputDecorationTheme(
+          border: InputBorder.none,
         ),
-      ),
+        textStyle: kHeading2,
+        onSelected: (value) {
+          if (Office.values.contains(value)) {
+            BlocProvider.of<DashboardBloc>(context).add(onChangeOffice(value!));
+          }
+        },
+        dropdownMenuEntries:
+            Office.values.map<DropdownMenuEntry<Office>>((Office office) {
+          return DropdownMenuEntry<Office>(
+            value: office,
+            label: office.name,
+          );
+        }).toList(),
+      )),
       drawer: CustomDrawer(),
       body: CustomScrollView(
         slivers: <Widget>[
@@ -26,7 +44,7 @@ class UP3Page extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                   child: Text(
-                    "Data Bulan Terakhir UP 3 Purwokerto",
+                    "Data Bulan Terakhir",
                     style: kHeading2,
                   ),
                 ),

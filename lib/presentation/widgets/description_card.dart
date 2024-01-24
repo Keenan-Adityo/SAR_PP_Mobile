@@ -1,7 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sar_pp_mobile/presentation/blocs/up3_bloc/up3_bloc.dart';
+import 'package:sar_pp_mobile/presentation/blocs/dashboard_bloc/dashboard_bloc.dart';
 import 'package:sar_pp_mobile/styles/text_styles.dart';
 
 class DescriptionCard extends StatelessWidget {
@@ -11,7 +11,7 @@ class DescriptionCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocSelector<Up3Bloc, Up3State, Up3State>(
+    return BlocSelector<DashboardBloc, DashboardState, DashboardState>(
       selector: (state) {
         return state;
       },
@@ -61,9 +61,11 @@ class DescriptionCard extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        (data.realisasi / data.target * 100)
-                                .toStringAsFixed(2) +
-                            "%",
+                        (data.realisasi / data.target * 100 > 110)
+                            ? "110%"
+                            : (data.realisasi / data.target * 100)
+                                    .toStringAsFixed(2) +
+                                "%",
                         style: kText.copyWith(
                             color: (data.realisasi / data.target * 100 < 100)
                                 ? Colors.red

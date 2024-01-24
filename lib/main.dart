@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
-import 'package:sar_pp_mobile/presentation/blocs/up3_bloc/up3_bloc.dart';
+import 'package:sar_pp_mobile/presentation/blocs/dashboard_bloc/dashboard_bloc.dart';
 import 'package:sar_pp_mobile/presentation/pages/login_page.dart';
 
 void main() {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         BlocProvider(
-          create: (_) => Up3Bloc(),
+          create: (_) => DashboardBloc(),
         ),
       ],
       child: MaterialApp(

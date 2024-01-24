@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:sar_pp_mobile/presentation/pages/up3_page.dart';
+import 'package:sar_pp_mobile/presentation/pages/dashboard_page.dart';
 import 'package:sar_pp_mobile/styles/text_styles.dart';
 
 class LoginPage extends StatelessWidget {

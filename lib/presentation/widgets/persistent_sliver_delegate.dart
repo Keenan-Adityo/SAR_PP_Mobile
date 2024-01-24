@@ -14,7 +14,7 @@ class PersistentSliverDelegate extends SliverPersistentHeaderDelegate {
           Padding(
             padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
             child: Text(
-              "Data Tahunan UP 3 Purwokerto",
+              "Data Tahunan",
               style: kHeading2,
             ),
           ),
